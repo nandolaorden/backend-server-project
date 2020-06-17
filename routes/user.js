@@ -34,7 +34,7 @@ app.get('/5ee27b56b219af17b045d803', (req, res, next) =>{
 
 
 // ==================
-// Actualizar usuario
+// Cambiar contraseña al usuario
 // ==================
 app.put('/:id',  (req, res)=>{
   var id = req.params.id;
@@ -58,16 +58,13 @@ app.put('/:id',  (req, res)=>{
       });
     }
 
-
-    user.name = body.name;
-    user.email = body.email;
-    user.role = body.role;
+    user.password = bcrypt.hashSync(body.password, 10),
 
     user.save( (err, userSave) =>{
       if(err){
           return res.status(401).json({
             ok: false,
-            mensaje: 'Error al crear usuario',
+            mensaje: 'Error al editar usuario',
             errors: err
           });
       }
