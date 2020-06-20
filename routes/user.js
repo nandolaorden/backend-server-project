@@ -45,7 +45,7 @@ app.put('/:id',  (req, res)=>{
     if(err){
         return res.status(500).json({
           ok: false,
-          mensaje: 'Error al buscar usuario',
+          mensaje: 'Error al cambiar contraseña',
           errors: err
         });
     }
