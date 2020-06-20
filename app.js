@@ -16,7 +16,7 @@ var appRoutes = require('./routes/app');
 var userRoutes = require('./routes/user');
 var settingRoutes = require('./routes/setting');
 var loginRoutes = require('./routes/login');
-
+var videoRoutes = require('./routes/video');
 
 app.use(cors());
 
@@ -37,6 +37,7 @@ mongoose.connection.openUri('mongodb://localhost:27017/projectDB', ( err, res )=
 app.use('/user', userRoutes);
 app.use('/setting', settingRoutes);
 app.use('/login', loginRoutes);
+app.use('/video', videoRoutes);
 app.use('/', appRoutes);
 
 
