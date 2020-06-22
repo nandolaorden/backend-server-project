@@ -9,7 +9,6 @@ var app = express();
 var User = require('../models/user');
 
 app.post('/', (req, res) =>{
-  
   var body = req.body;
   User.findOne({ email: body.email }, (err, userDB)=>{
     if(err){
@@ -19,7 +18,6 @@ app.post('/', (req, res) =>{
             errors: err
           });
     }
-
     if(!userDB){
         return res.status(400).json({
             ok: false,
@@ -35,7 +33,6 @@ app.post('/', (req, res) =>{
             errors: err
       });
     }
-
     // crear token
     userDB.password = ': )';
     var token = jwt.sign({ user: userDB }, SEED, { expiresIn: 28800 })
@@ -47,7 +44,6 @@ app.post('/', (req, res) =>{
           id: userDB._id
     });
   })
-
 })
 
 

@@ -10,7 +10,6 @@ var fs = require('fs');
 
 // mostrar videos q hay en la carpeta videos
 app.get('/', (req, res) =>{
-  //fs.rmdirSync(ruta.join(__dirname, '../videos/'), { recursive: true })
   ncp("//192.168.1.100/project/", ruta.join(__dirname, '../videos/',  'video' ), function (err) {  
     if (err) {    
       return console.error(err);  

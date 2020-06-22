@@ -18,7 +18,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.18",
     "mongoose-unique-validator": "^2.0.3",
-    "ncp": "^2.0.0"
+    "ncp": "^2.0.0",
+    "rss-parser": "^3.8.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

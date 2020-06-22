@@ -17,6 +17,7 @@ var userRoutes = require('./routes/user');
 var settingRoutes = require('./routes/setting');
 var loginRoutes = require('./routes/login');
 var videoRoutes = require('./routes/video');
+var rssRoutes = require('./routes/rss');
 
 app.use(cors());
 
@@ -38,6 +39,7 @@ app.use('/user', userRoutes);
 app.use('/setting', settingRoutes);
 app.use('/login', loginRoutes);
 app.use('/video', videoRoutes);
+app.use('/rss', rssRoutes);
 app.use('/', appRoutes);
 
 
